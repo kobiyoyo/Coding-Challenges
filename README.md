@@ -35,9 +35,9 @@ var getSum = function(a, b) {
 ````javascript
 var getSum = function(a, b) {
     while(b!=0){
-        const carry = a & b
-        a = a ^ b
-        b = carry << 1
+        const carry = a & b //set bit of a and b
+        a = a ^ b //sum of the bits of a & b
+        b = carry << 1 // carry is shifted by one so that adding it to a gives the required sum
     }
 return a
 };
