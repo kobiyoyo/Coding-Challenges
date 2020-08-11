@@ -6,11 +6,11 @@ var twoSum = function(nums, target) {
     let newObj = {};
   let newArr = [];
   for(let j = 0; j<nums.length; j++){
-    let diff = target - nums[j];
-    if(diff in newObj){
-      newArr.push(nums.indexOf(diff), nums.indexOf(nums[j]));
+    let diff = target - nums[j]; // minus the array element and the sum
+    if(diff in newObj){ // check if the difference is in the hash
+      newArr.push(nums.indexOf(diff), nums.indexOf(nums[j])); //add the array element and the diff into a new array
     }
-    newObj[nums[j]] = j;
+    newObj[nums[j]] = j; // for every iteration create a new hash
   }
   return newArr;
 };
