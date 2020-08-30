@@ -45,8 +45,62 @@ array.deleteindex(2)
 array.getAll()
 
 ````
+## Spriral Print
+#### Let’s create an example problem with a matrix. Given a matrix, print the elements in spiral order.
+https://www.techiedelight.com/print-matrix-spiral-order/
 
 
+````javascript
+ const sprialPrint = (m) => {
+ let top = 0;
+ let bottom = m.length - 1;
+ let left = 0;
+ let right = m[0].length - 1;
+while (1)
+	{
+		if (left > right)
+			break;
+		// print top row
+		for (let i = left; i <= right; i++){
+			console.log(m[top][i]);
+    }
+		top++;
+
+		if (top > bottom)
+			break;
+		// print right column
+		for (let i = top; i <= bottom; i++){
+			console.log(m[i][right]);
+    }
+		right--;
+
+		if (left > right)
+			break;
+		// print bottom row
+		for (let i = right; i >= left; i--){
+			console.log(m[bottom][i]);
+    }
+		bottom--;
+
+		if (top > bottom)
+			break;
+		// print left column
+		for (let i = bottom; i >= top; i--){
+			console.log(m[i][left]);
+    }
+		left++;
+	}
+}
+
+const m = [
+  [1,87,5,6],
+  [11,2,3,1],
+  [9,3,35,4],
+  [5,2,27,8]
+]
+
+sprialPrint(m)
+````
 
 
 
