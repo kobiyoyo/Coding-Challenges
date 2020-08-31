@@ -48,7 +48,7 @@ array.getAll()
 ## Spriral Print
 #### Let’s create an example problem with a matrix. Given a matrix, print the elements in spiral order.
 https://www.techiedelight.com/print-matrix-spiral-order/
-
+ 
 
 ````javascript
  const sprialPrint = (m) => {
