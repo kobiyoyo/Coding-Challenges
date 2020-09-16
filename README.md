@@ -102,7 +102,25 @@ const m = [
 sprialPrint(m)
 ````
 
+````ruby
+Write a function callled maxSubarraySum which accepts an array of intergers and a number called n.The function should calculate the maximum sum of n consecutive elements in the array.
+def max_sub_array(nums,k)
+    newSize = k 
+    result = 0
+    len = nums.size - 1
+    newSize.times do |i|
+        result += nums[i]  
+    end
 
+    temp = result
+    for i in newSize..len
+        temp = (temp - nums[i - newSize]) + nums[i]
+        result = temp > result ? temp : result
+    end
+    result
+end
+puts max_sub_array([4,2,1,6],2)
+````
 
 ### Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 https://levelup.gitconnected.com/solving-the-two-sum-problem-in-javascript-three-ways-4d43067fcfc7
