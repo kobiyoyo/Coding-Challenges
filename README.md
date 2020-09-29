@@ -26,7 +26,7 @@ class MyArray {
     const item = this.data[index]
     this.shift(index) 
     return item 
-  }
+  } 
   shift(index){
     for(let i = index; i < this.length; i++ ){
       this.data[i] = this.data[i + 1] // change data as from index till the end
