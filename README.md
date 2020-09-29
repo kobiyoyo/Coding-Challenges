@@ -101,7 +101,7 @@ const m = [
 
 sprialPrint(m)
 ````
-
+### Sliding Window Technique
 ````ruby
 Write a function callled maxSubarraySum which accepts an array of intergers and a number called n.The function should calculate the maximum sum of n consecutive elements in the array.
 def max_sub_array(nums,k)
@@ -121,7 +121,33 @@ def max_sub_array(nums,k)
 end
 puts max_sub_array([4,2,1,6],2)
 ````
+````ruby 
+Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
 
+Example
+
+For inputArray = [3, 6, -2, -5, 7, 3], the output should be
+adjacentElementsProduct(inputArray) = 21.
+
+7 and 3 produce the largest product.
+def adjacentElementsProduct(inputArray)
+# use sliding window to check for the max product
+  numIn = 2 
+  result = 1
+  numIn.times{|i|
+      result *= inputArray[i]
+  } 
+  if result == 0
+    return 0
+  end 
+  temp = result
+  for i in numIn..inputArray.length - 1
+    temp = (temp / inputArray[i - numIn ]) * inputArray[i]
+    result = result < temp ? temp : result
+  end
+  result
+end
+````
 ### Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 https://levelup.gitconnected.com/solving-the-two-sum-problem-in-javascript-three-ways-4d43067fcfc7
 https://medium.com/@paulrohan/solving-the-classic-two-sum-and-three-sum-problem-in-javascript-7d5d1d47db03
