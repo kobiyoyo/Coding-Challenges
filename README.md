@@ -1,5 +1,5 @@
 # Coding-Challenges 
-[Array](#array)
+- [Array](#array)
 
 
 
@@ -50,7 +50,8 @@ array.getAll()
 
 ````
 ## Spriral Print
-#### Let’s create an example problem with a matrix. Given a matrix, print the elements in spiral order.
+### Let’s create an example problem with a matrix. Given a matrix, print the elements in spiral order.
+###### Solution
 https://www.techiedelight.com/print-matrix-spiral-order/
  
 
@@ -105,7 +106,46 @@ const m = [
 
 sprialPrint(m)
 ````
-### Sliding Window Technique
+#### Rotate Image
+You are given an n x n 2D matrix that represents an image. Rotate the image by 90 degrees (clockwise).
+````javascript
+
+a = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+     
+function rotateImage(a) {
+   	const c = a.length;
+	const r = a[0].length;
+	let b = new Array(r);
+	for (let y=0; y<r; y++) {
+		b[y] = new Array(c);
+		for (let x=0; x<c; x++) {
+			b[y][x] = a[c-1-x][y];
+		}
+	}
+	return b;
+===============================================
+function rotateImage(a) {
+const flipMatrix = a => (
+  a[0].map((column, index) => (
+    a.map(row => row[index])
+  ))
+);
+const rotateMatrix = a => (
+  flipMatrix(a.reverse())
+);
+
+return rotateMatrix(a)
+}
+
+
+     
+````
+
+
+
+### MaxSubarraySum
 ````ruby
 Write a function callled maxSubarraySum which accepts an array of intergers and a number called n.The function should calculate the maximum sum of n consecutive elements in the array.
 def max_sub_array(nums,k)
