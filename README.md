@@ -106,6 +106,33 @@ const m = [
 
 sprialPrint(m)
 ````
+Toeplitz Matrix
+A Toeplitz matrix is a matrix where every left-to-right-descending diagonal has the same element. Given a non-empty matrix arr, write a function that returns true if and only if it is a Toeplitz matrix. The matrix can be any dimensions, not necessarily square.
+
+
+````ruby
+def toePmatrix(a)
+  r  = a.length - 1
+  c  =  a[0].length - 1
+  r.times do |i|
+    c.times do |j|
+      if a[i][j] != a[i + 1][j + 1]
+        return false
+      end
+    end
+  end
+  return true
+end
+	a = [
+		[3, 7, 0, 9, 8],
+		[5, 3, 7, 0, 9],
+		[6, 5, 3, 7, 0],
+		[4, 6, 5, 3, 7]
+	]
+puts toePmatrix(a)
+````
+
+
 #### Rotate Image
 You are given an n x n 2D matrix that represents an image. Rotate the image by 90 degrees (clockwise).
 ##### Solution 
