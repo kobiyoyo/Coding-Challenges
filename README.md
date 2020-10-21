@@ -108,6 +108,8 @@ sprialPrint(m)
 ````
 #### Rotate Image
 You are given an n x n 2D matrix that represents an image. Rotate the image by 90 degrees (clockwise).
+##### Solution 
+https://github.com/tinwatchman/2d-array-rotation/blob/master/2d-array-rotation.js
 ````javascript
 
 a = [[1, 2, 3],
