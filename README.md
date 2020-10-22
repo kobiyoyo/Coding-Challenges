@@ -143,7 +143,7 @@ https://medium.com/front-end-weekly/matrix-rotation-%EF%B8%8F-6550397f16ab
 a = [[1, 2, 3],
      [4, 5, 6],
      [7, 8, 9]]
-     
+ 
 function rotateImage(a) {
    	const c = a.length;
 	const r = a[0].length;
@@ -155,7 +155,8 @@ function rotateImage(a) {
 		}
 	}
 	return b;
-===============================================
+	}
+=========================================================================
 function rotateImage(a) {
 const flipMatrix = a => (
   a[0].map((column, index) => (
@@ -168,8 +169,19 @@ const rotateMatrix = a => (
 
 return rotateMatrix(a)
 }
-
-
+=========================================================================
+Ruby
+def rotateImage(a)
+  def flip(a)
+    a.transpose.each do |ary|
+     ary
+    end
+  end
+  def reverseMe(a)
+    flip(a.reverse)
+  end
+ reverseMe(a)
+end
      
 ````
 
