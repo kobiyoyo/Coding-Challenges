@@ -112,10 +112,10 @@ A Toeplitz matrix is a matrix where every left-to-right-descending diagonal has 
 
 ````ruby
 def toePmatrix(a)
-  r  = a.length - 1
-  c  =  a[0].length - 1
-  r.times do |i|
-    c.times do |j|
+  c  = a.length - 1
+  r  =  a[0].length - 1
+  c.times do |i|
+    r.times do |j|
       if a[i][j] != a[i + 1][j + 1]
         return false
       end
