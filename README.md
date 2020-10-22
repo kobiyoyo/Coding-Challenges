@@ -182,7 +182,16 @@ def rotateImage(a)
   end
  reverseMe(a)
 end
-     
+
+//Another solution
+
+def rotateImage(a)
+    b = []
+    a.transpose.each do |ary|
+     b << ary.reverse
+    end
+  b
+end
 ````
 
 
