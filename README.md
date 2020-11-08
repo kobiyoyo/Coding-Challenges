@@ -288,3 +288,17 @@ return a
 };
 `````
 
+```ruby
+def fibn(x)
+  a = 1
+  b = 1
+  for i in 3..x
+    c = a + b
+    a = b
+    b = c
+  end
+  b
+end
+
+puts fibn(4)
+```
