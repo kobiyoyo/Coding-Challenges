@@ -2,7 +2,7 @@
 Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same
 
 ````ruby
-
+Please Dry Me When you have time
 def square(arr)
   arr.map do |x|
     x ** 2
@@ -45,4 +45,35 @@ end
 puts same([1, 2, 3], [4, 1, 9])
 puts same([1, 2, 3], [1, 9])
 puts same([1, 2, 1], [4, 4, 1])
+````
+
+````ruby 
+def validAnagram str_one,str_two
+  return false if str_one.length != str_two.length
+  freq_one = {}
+  len = str_one.length - 1
+  str_two = str_two.split("")
+  # frequency counter pattern
+  for i in 0..len
+    freq_one[str_one[i]] = (freq_one[str_one[i]]||0)+1
+  end
+
+  for i in 0..len
+    return false if !freq_one.key?(str_two[0])
+    # check if present then minus 1 from the hash value 
+    freq_one[str_two[0]] = freq_one[str_two[0]] - 1
+    #if the hash value is equal to zero delete it
+    if freq_one[str_two[0]] == 0
+      freq_one.delete(str_two[0])
+    end
+    str_two.shift
+  end
+  true
+end
+
+
+puts validAnagram('', '')
+puts validAnagram('aaz', 'zza')
+puts validAnagram('anagram', 'nagaram')
+puts validAnagram('anagam', 'nagaram')
 ````
