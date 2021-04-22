@@ -47,6 +47,9 @@ puts same([1, 2, 3], [1, 9])
 puts same([1, 2, 1], [4, 4, 1])
 ````
 
+### ValidAnagram(arr1, arr2)
+Given two strings, write a function called validAnagram to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
 ````ruby 
 def validAnagram str_one,str_two
   return false if str_one.length != str_two.length
