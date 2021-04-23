@@ -83,3 +83,20 @@ puts validAnagram('anagam', 'nagaram')
 ## AreThereDuplicates(...args)
 Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. You can solve this using the frequency counter pattern OR the multiple pointers pattern.
 
+````ruby
+def areThereDuplicates *args
+  freq_one = {}
+  len = args.length - 1
+  for i in 0..len
+   return true if freq_one.include?(args[i]) 
+   freq_one[args[i]] = (freq_one[args[i]] || 0 ) + 1
+  end
+  false
+end
+
+
+
+puts areThereDuplicates(1, 2, 3)
+puts areThereDuplicates(1, 2, 2)
+puts areThereDuplicates('a', 'b', 'c', 'a')
+````
