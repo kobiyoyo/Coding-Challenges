@@ -30,3 +30,48 @@ puts sumZero([-2, 0, 1, 3]);
 puts sumZero([1, 2, 3]);
 puts sumZero([1, 2, 3,-2]);
 ````
+
+
+
+
+
+
+## CountUniqueValues(arr)
+Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
+
+````ruby
+
+
+Solution 1
+
+Time: O(n)O(n)
+Space: O(1)O(1)
+
+def countUniqueValues arr
+  return 0 if arr.length < 0
+  j = 0
+  len = arr.length - 1
+  for i in 0..len
+    if arr[i - 1] != arr[i]
+      j += 1
+    end
+  end
+  print j
+end
+
+
+Solution 2
+Time: O(n)O(n)
+Space: O(1)O(1)
+
+def countUniqueValues arr
+  return 0 if arr.length < 0
+  arr.uniq.length
+end
+
+countUniqueValues([1, 1, 1, 1, 1, 2]); // 2
+countUniqueValues([-2, -1, -1, 0, 1]); // 4
+countUniqueValues([]); // 0
+
+````
+
