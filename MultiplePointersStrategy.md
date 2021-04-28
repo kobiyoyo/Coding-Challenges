@@ -3,10 +3,12 @@ Write a function called sumZero which accepts a sorted array of integers.
 The function should find the first pair where the sum is 0. 
 Return an array that includes both values that sum to zero or no record if a pair does not exist.
 
+
+````ruby
+
 Time: O(n)O(n)
 Space: O(1)O(1)
 
-````ruby
 def sumZero arr
   right = arr.length  - 1
   left  = 0
@@ -69,9 +71,9 @@ def countUniqueValues arr
   arr.uniq.length
 end
 
-countUniqueValues([1, 1, 1, 1, 1, 2]); // 2
-countUniqueValues([-2, -1, -1, 0, 1]); // 4
-countUniqueValues([]); // 0
+countUniqueValues([1, 1, 1, 1, 1, 2]); 
+countUniqueValues([-2, -1, -1, 0, 1]); 
+countUniqueValues([]); 
 
 ````
 
