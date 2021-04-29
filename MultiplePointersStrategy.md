@@ -1,4 +1,4 @@
-sumZero(arr)¶
+## SumZero(arr)
 Write a function called sumZero which accepts a sorted array of integers.
 The function should find the first pair where the sum is 0. 
 Return an array that includes both values that sum to zero or no record if a pair does not exist.
@@ -77,3 +77,32 @@ countUniqueValues([]);
 
 ````
 
+
+## AveragePair(arr, val)
+Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target.
+
+````ruby
+
+Time: O(n)O(n)
+Space: O(1)O(1)
+
+def averagePair arr,target
+  left = 0
+  right = arr.length - 1
+  while left < right  do
+    avg_pair = (arr[left] + arr[right])/2.0
+    return true if avg_pair == target
+    if avg_pair < target
+      left = left + 1
+    else
+      right = right - 1
+    end
+  end
+  false
+end
+
+puts averagePair([1, 2, 3], 2.5)
+puts averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)
+puts averagePair([-1, 0, 3, 4, 5, 6], 4.1)
+puts averagePair([], 4)
+````
