@@ -106,3 +106,19 @@ puts averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)
 puts averagePair([-1, 0, 3, 4, 5, 6], 4.1)
 puts averagePair([], 4)
 ````
+````ruby 
+def isSubsequence(str_one,str_two)
+  str_len = str_one.length 
+  len = str_two.length - 1
+  for i in 0..len
+    return true if str_len == i
+    next if str_one[i] == str_two[i]
+  end 
+  false
+end 
+
+print isSubsequence('hello', 'hello world')
+print isSubsequence('sing', 'sting')
+print isSubsequence('abc', 'acb')
+
+````
