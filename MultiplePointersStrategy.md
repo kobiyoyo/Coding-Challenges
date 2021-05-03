@@ -1,3 +1,7 @@
+Multiple Pointers Pattern 
+Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition.
+Very efficient for solving problems with minimal Space as well.
+
 ## SumZero(arr)
 Write a function called sumZero which accepts a sorted array of integers.
 The function should find the first pair where the sum is 0. 
