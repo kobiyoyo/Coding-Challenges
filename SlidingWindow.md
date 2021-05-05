@@ -13,3 +13,36 @@ This strategy is a bit trick so i need to break it down
 - Return the max between temp and result and assign to result
 - Return result 
 
+
+## MaxSubarraySum(arr, n)
+Write a function called maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elements in the array.
+
+````ruby
+    Time: O(n)O(n)
+    Space: O(1)O(1)
+    
+    def maxSubarraySum(arr,n)
+      return nil if arr.length < n
+      return arr.max if n == 1
+      n = n - 1
+      result = 0 
+      temp = 0 
+      for i in 0..n 
+        result += arr[i]
+      end
+      temp = result
+      len  = arr.length - 1
+      for i in n..len
+        temp = temp - arr[i - n] + arr[i]
+        result = temp if temp > result
+      end
+      result
+    end
+
+
+p maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2)
+p maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4)
+p maxSubarraySum([4, 2, 1, 6], 1)
+p maxSubarraySum([], 4)
+
+````
