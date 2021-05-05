@@ -3,7 +3,7 @@ This pattern involves creating a window which can either be an array or number f
 Depending on a certain condition, the window either increases or closes (and a new window is created).
 Very useful for keeping track of a subset of data in an array/string etc.
 
-This strategy is a bit trick so i need to break it down 
+This strategy is a bit tricky so i need to break it down 
 
 - Define two variables result and temp which will be equal to zero
 - Create a for loop to add up the first n  values to result
