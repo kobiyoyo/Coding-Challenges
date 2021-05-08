@@ -50,3 +50,32 @@ p maxSubarraySum([], 4)
 Write a function called minSubArrayLen which accepts two parameters - an array of positive integers and a positive integer.
 
 This function should return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function. If there isn’t one, return 0 instead.
+````ruby
+Time: O(n)O(n)
+Space: O(1)O(1)
+def minSubArrayLen arr, num
+ i = 0
+ j = 0 
+ sum = 0 
+ result = Float::INFINITY
+ len = arr.length - 1
+ while i < len
+  if sum < num && j < len
+    sum += arr[j]
+    j += 1
+  elsif sum >= num
+    result = [result,j - i].min
+    sum -= arr[i]
+    i += 1
+  else
+    break
+  end
+ end
+ return result == Float::INFINITY ? 0 : result
+end
+
+
+p minSubArrayLen([2, 3, 1, 2, 4, 3], 7)
+p minSubArrayLen([2, 1, 6, 5, 4], 9)
+p minSubArrayLen([3, 1, 62, 19], 52)
+````
